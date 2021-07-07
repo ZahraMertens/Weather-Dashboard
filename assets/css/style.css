@@ -17,6 +17,8 @@ header {
     font-size: 40px;
     font-family: 'Quicksand', sans-serif;
     text-align: center;
+    color: white;
+    font-weight: bolder;
     margin: auto;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -67,6 +69,11 @@ main {
     border: 1px solid black;
     border-radius: 15px;
     margin-right: 0;
+    padding: 10px;
+}
+
+.card-result p {
+    padding-left: 5px;
 }
 
 .header-result {
@@ -90,10 +97,25 @@ main {
     border-radius: 15px;
 }
 
+.header-forecast {
+    font-size: 30px;
+}
+
 .card-mini {
     margin: 0;
     display: inline;
     background-color: rgb(187, 218, 247);
     border-radius: 15px;
     border: 1px solid black;
+    padding: 5px;
+    margin: auto;
+}
+
+#forecast-header {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.p-forecast {
+    font-size: 12px;
 }

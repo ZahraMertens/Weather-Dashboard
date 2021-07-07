@@ -122,31 +122,27 @@ function displayCards(weather, location){
   var day = [0, 8, 16, 24, 32];
 
   smallContainer.addClass("main-result");
+  smallContainer.append("<h1 class='col-12 header-forecast'>5 Day Forecast:</h1>")
 
   day.forEach(function (i) {
     //var date = currentDate.add(1, "day");
     //console.log(date);
-
+    
     var createLi = $("<div>")
-    createLi.addClass("card-mini")
+    createLi.addClass("col-2 card-mini")
     smallContainer.append(createLi);
+    var date = moment(weather.list[i].dt_txt).format("DD/MM/YYYY")
+    console.log(date)
     var temp1 = weather.list[i].main.temp;
     var wind1 = weather.list[i].wind.speed;
     var hum1 = weather.list[i].main.humidity;
-    var pTemp = $("<p>");
-    var pWind = $("<p>");
-    var phum = $("<p>");
-
-    pTemp.text("Temp: " + temp1 + "C");
-    pWind.text("Wind: " + wind1 + "MPH");
-    phum.text("Humidity: " + hum1 + "%");
-
-    createLi.append(pTemp);
-    createLi.append(pWind);
-    createLi.append(phum);
+    
+    createLi.append("<h1 id='forecast-header'>" + date + "</h1>");
+    createLi.append("<img src='http://openweathermap.org/img/wn/" + weather.list[i].weather[0].icon + "@2x.png'</img>")
+    createLi.append("<p class='p-forecast'>Temp: " + temp1 + " C</p>");
+    createLi.append("<p class='p-forecast'>Wind: " + wind1 + " MPH</p>");
+    createLi.append("<p class='p-forecast'>Humidity: " + hum1 + " %</p>");
   })
-
-
 }
 
 function displayWeather(weather, location){
@@ -235,6 +231,6 @@ function displayWeather(weather, location){
   };
 
 };
-
+/////////////////EVENT DELEGATION
 //ulEl.on("click", ".li-el-result", handleList);
 submitBtn.on("click", handleInput);
