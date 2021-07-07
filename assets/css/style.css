@@ -66,6 +66,7 @@ main {
     background-color: white;
     border: 1px solid black;
     border-radius: 15px;
+    margin-right: 0;
 }
 
 .header-result {
@@ -87,4 +88,12 @@ main {
 .red {
     background-color: rgb(236, 122, 122);
     border-radius: 15px;
+}
+
+.card-mini {
+    margin: 0;
+    display: inline;
+    background-color: rgb(187, 218, 247);
+    border-radius: 15px;
+    border: 1px solid black;
 }

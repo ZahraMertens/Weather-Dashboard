@@ -2,7 +2,7 @@ var submitBtn = $(".btn");
 var cityInput = $("#city");
 var ulEl = $(".previous-results");
 var cardMain = $(".card-result");
-var smallCardContainer = $(".mini-card-container");
+var smallContainer = $(".mini-card-container");
 var inputPast = [];
 var currentDate = moment().format("DD/MM/YYYY");
 console.log(currentDate);
@@ -31,6 +31,7 @@ function handleInput (event){
 
     //Empty Card if there was a rseult beforehand 
     cardMain.empty();
+    smallContainer.empty();
 
     var location = cityInput.val().trim();
     console.log(location);
@@ -62,7 +63,7 @@ function handleInput (event){
     }
 };
 
-function handleList (event){
+/*function handleList (event){
   event.preventDefault();
 
   cardMain.empty();
@@ -72,11 +73,12 @@ function handleList (event){
   if (location) {
     getWeather(location);
   };
-}
+}*/
 
 function getWeather (location) {
 
   var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&units=metric&appid=421ab5767df3d4e8136a4ef1f447616c"
+  var forecastUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + location + "&units=metric&appid=421ab5767df3d4e8136a4ef1f447616c"
 
   fetch(apiUrl)
     .then(function (response) {
@@ -94,7 +96,57 @@ function getWeather (location) {
     .catch(function (error) {
       alert('City does not exist!');
   });
+
+  fetch(forecastUrl)
+    .then(function (response) {
+      if (response.ok) {
+        console.log(response);
+        response.json().then(function (data) {
+          console.log(data);
+          displayCards(data, location);
+          
+        });
+      } else {
+        alert('Error: ' + response.statusText);
+      }
+    })
+    .catch(function (error) {
+      alert('City does not exist!');
+  });
+  
  
+}
+
+function displayCards(weather, location){
+
+  var day = [0, 8, 16, 24, 32];
+
+  smallContainer.addClass("main-result");
+
+  day.forEach(function (i) {
+    //var date = currentDate.add(1, "day");
+    //console.log(date);
+
+    var createLi = $("<div>")
+    createLi.addClass("card-mini")
+    smallContainer.append(createLi);
+    var temp1 = weather.list[i].main.temp;
+    var wind1 = weather.list[i].wind.speed;
+    var hum1 = weather.list[i].main.humidity;
+    var pTemp = $("<p>");
+    var pWind = $("<p>");
+    var phum = $("<p>");
+
+    pTemp.text("Temp: " + temp1 + "C");
+    pWind.text("Wind: " + wind1 + "MPH");
+    phum.text("Humidity: " + hum1 + "%");
+
+    createLi.append(pTemp);
+    createLi.append(pWind);
+    createLi.append(phum);
+  })
+
+
 }
 
 function displayWeather(weather, location){
@@ -184,5 +236,5 @@ function displayWeather(weather, location){
 
 };
 
-ulEl.on("click", ".li-el-result", handleList);
+//ulEl.on("click", ".li-el-result", handleList);
 submitBtn.on("click", handleInput);
