@@ -63,17 +63,19 @@ function handleInput (event){
     }
 };
 
-/*function handleList (event){
+function handleList (event){
   event.preventDefault();
-
+  
   cardMain.empty();
+  smallContainer.empty();
 
-  var location = liEl.val();
+  var location = $(".li-el-results").text();
+  console.log(location)
 
   if (location) {
     getWeather(location);
   };
-}*/
+}
 
 function getWeather (location) {
 
@@ -232,5 +234,5 @@ function displayWeather(weather, location){
 
 };
 /////////////////EVENT DELEGATION
-//ulEl.on("click", ".li-el-result", handleList);
+ulEl.on("click", $(".li-el-result"), handleList);
 submitBtn.on("click", handleInput);
