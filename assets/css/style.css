@@ -1,0 +1,90 @@
+body {
+    box-sizing: border-box;
+    background-image: url(../images/sky.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    text-align: center;
+    background-image: linear-gradient(to right, rgb(200, 201, 255) , rgb(0, 132, 255));
+}
+
+.app-title {
+    font-size: 40px;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    margin: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.search-card {
+    float: left;
+}
+
+
+main {
+    padding-top: 20px;
+}
+
+.from-label {
+    display: block;
+}
+
+.btn {
+  margin-top: 10px;
+}
+
+#form-header {
+    font-size: 20px;
+}
+
+.result-card-main {
+    float: right;
+}
+
+.li-el-results {
+    background-color: rgb(255, 255, 255);
+    padding: 15px;
+    border-radius: 15px;
+    border: solid 2px rgb(0, 0, 0);
+    font-size: 20px;
+    list-style-type: none;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.previous-results {
+    padding-left: 0px;
+}
+
+.main-result {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+.header-result {
+    font-size: 30px;
+    font-family: monospace;
+    font-weight: 300;
+}
+
+.green {
+    background-color: rgb(124, 189, 124);
+    border-radius: 15px;
+}
+
+.orange {
+    background-color: rgb(211, 174, 104);
+    border-radius: 15px;
+}
+
+.red {
+    background-color: rgb(236, 122, 122);
+    border-radius: 15px;
+}
