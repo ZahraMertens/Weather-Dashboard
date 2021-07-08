@@ -1,3 +1,5 @@
+
+//Global variables
 var submitBtn = $(".btn");
 var btnClear = $(".btn-storage")
 var cityInput = $("#city");
@@ -99,11 +101,11 @@ function displayWeather(weather, location){
   if (weather.length === 0) {
     alert("No Data found")
   };
-
+/////////////////////////////////////////////
   //Display seach as list elements and set local storage
   console.log(location);
         
-  var liEl = $("<li class='li-el-results'>" + location + "</li>");
+  var liEl = $("<li class='li-el-results value='" + location + "'>" + location + "</li>");
   ulEl.append(liEl);
         
   //Push location in empty array;
@@ -141,7 +143,7 @@ function displayWeather(weather, location){
   var wind = weather.wind.speed ;
   var hum = weather.main.humidity;
 
-  tempEl.text("Temp: " + temp + " C");
+  tempEl.text("Temp: " + temp + " °C");
   windEl.text("Wind: " + wind + " MPH");
   humidityEl.text("Humidity: " + hum + " %");
 
@@ -228,7 +230,7 @@ function displayCards(weather, location){
     //Append date and details to card container
     createDiv.append("<h1 id='forecast-header'>" + date + "</h1>");
     createDiv.append("<img src='http://openweathermap.org/img/wn/" + weather.list[i].weather[0].icon + "@2x.png'</img>")
-    createDiv.append("<p class='p-forecast'>Temp: " + temp1 + " C</p>");
+    createDiv.append("<p class='p-forecast'>Temp: " + temp1 + " °C</p>");
     createDiv.append("<p class='p-forecast'>Wind: " + wind1 + " MPH</p>");
     createDiv.append("<p class='p-forecast'>Humidity: " + hum1 + " %</p>");
   })
@@ -242,11 +244,12 @@ function handleList (event){
   cardMain.empty();
   smallContainer.empty();
 
-  var location = $(".li-el-results").text();
+  var location = $(event.target).text()
   console.log(location) ///////////////////////////////in console.log SydneySydneySyndey
 
   if (location) {
     getWeather(location);
+    $(event.target).remove();
   };
 }
 
@@ -260,5 +263,5 @@ function clearStorage (event){
 
 //On click of buttons events happen;
 btnClear.on("click", clearStorage);
-ulEl.on("click", $(".li-el-result"), handleList);
+ulEl.on("click", $(".li-el-results"), handleList);
 submitBtn.on("click", handleInput);
