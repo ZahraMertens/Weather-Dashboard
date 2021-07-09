@@ -8,7 +8,6 @@ var cardMain = $(".card-result");
 var smallContainer = $(".mini-card-container");
 var inputPast = [];
 var currentDate = moment().format("DD/MM/YYYY");
-console.log(currentDate);
 
 
 //On load of page previous search inputs get extracted from localStorage and get displayed as list elements
@@ -120,36 +119,25 @@ function displayWeather(weather, location){
   //Append text
   var h1El = $("<h1>");
   var imgEl = $("<img>");
-  var tempEl = $("<p>");
-  var windEl = $("<p>");
-  var humidityEl = $("<p>");
-  var uvEl = $("<p>");
-  
   var icon = weather.weather[0].icon;
   console.log(icon);
    
   var iconUrl = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
   imgEl.attr("src", iconUrl);
    
-    
-  h1El.addClass("header-result");
-  h1El.text(location + " " + currentDate);
-  cardMain.append(h1El);
+  h1El = $("<h1 class='header-result'>" + location + " " + currentDate + "</h1>");
+  cardMain.append(h1El)
   h1El.append(imgEl);
   cardMain.addClass("main-result")
    
-    
+  //Get values from api response/data
   var temp = weather.main.temp ;
   var wind = weather.wind.speed ;
   var hum = weather.main.humidity;
 
-  tempEl.text("Temp: " + temp + " °C");
-  windEl.text("Wind: " + wind + " MPH");
-  humidityEl.text("Humidity: " + hum + " %");
-
-  cardMain.append(tempEl);
-  cardMain.append(windEl);
-  cardMain.append(humidityEl);
+  cardMain.append("<p class='p-main-container'><span class='p-span'>Temp: </span>" + temp + " °C</p>");
+  cardMain.append("<p class='p-main-container'><span class='p-span'>Wind: </span>" + wind + " MPH</p>");
+  cardMain.append("<p class='p-main-container'><span class='p-span'>Humidity: </span>" + hum + " %</p>");
 
 
   //Get coordinates for API, as uv index can only be extracted with a url including coordinates instead of city name
@@ -186,17 +174,32 @@ function displayWeather(weather, location){
     var uv = coordinates.current.uvi;
     console.log(uv)
 
-    //Append data to p element in container 
-    uvEl.text("UV Index: " + uv);
-    cardMain.append(uvEl);
+    //Append uv index to container
+    uvEl = $("<P class='p-span p-main-container'>UV Index: </P>");
+    uvSpan = $("<span class='uv-span'>" + uv + "</span>")
+    uvEl.append(uvSpan);
+    cardMain.append(uvEl)
     
     //Set classes to display colour to show wether the uv index is low,medium or high
     if (uv < 2) {
-      uvEl.addClass("green")
-    } else if (uv >= 2 && uv < 5){
-      uvEl.addClass("orange")
-    } else if (uv > 5){
-      uvEl.addClass("red")
+      uvSpan.addClass("green");
+      uvSpan.append(" (low)");
+
+    } else if (uv < 5){
+      uvSpan.addClass("yellow");
+      uvSpan.append(" (moderate)");
+
+    } else if (uv < 7){
+      uvSpan.addClass("orange");
+      uvSpan.append(" (high)");
+
+    } else if (uv < 10) {
+      uvSpan.addClass("red");
+      uvSpan.append(" (very high)");
+
+    } else if (uv > 10) {
+      uvSpan.addClass("purple");
+      uvSpan.append(" (extreme)");
     }
   };
 
@@ -210,14 +213,14 @@ function displayCards(weather, location){
   var day = [0, 8, 16, 24, 32];
 
   //Add header to container and class
-  smallContainer.addClass("main-result");
-  smallContainer.append("<h1 class='col-12 header-forecast'>5 Day Forecast:</h1>")
+  smallContainer.addClass("main-result small-cards");
+  smallContainer.append("<h1 class='col-md-12 col-lg-12 header-forecast'>5 Day Forecast:</h1>")
 
   //Looping over array to get data from each api call object 
   day.forEach(function (i) {
  
     var createDiv = $("<div>")
-    createDiv.addClass("col-2 card-mini")
+    createDiv.addClass("col-9 col-sm-12 col-md-2 col-lg-2 card-mini")
     smallContainer.append(createDiv);
     //Date for each day
     var date = moment(weather.list[i].dt_txt).format("DD/MM/YYYY")
@@ -230,9 +233,9 @@ function displayCards(weather, location){
     //Append date and details to card container
     createDiv.append("<h1 id='forecast-header'>" + date + "</h1>");
     createDiv.append("<img src='http://openweathermap.org/img/wn/" + weather.list[i].weather[0].icon + "@2x.png'</img>")
-    createDiv.append("<p class='p-forecast'>Temp: " + temp1 + " °C</p>");
-    createDiv.append("<p class='p-forecast'>Wind: " + wind1 + " MPH</p>");
-    createDiv.append("<p class='p-forecast'>Humidity: " + hum1 + " %</p>");
+    createDiv.append("<p class='p-forecast'><span class='p-span'>Temp: </span>" + temp1 + " °C</p>");
+    createDiv.append("<p class='p-forecast'><span class='p-span'>Wind: </span>" + wind1 + " MPH</p>");
+    createDiv.append("<p class='p-forecast'><span class='p-span'>Humidity: </span>" + hum1 + " %</p>");
   })
 }
 
@@ -249,9 +252,9 @@ function handleList (event){
 
   if (location) {
     getWeather(location);
-    $(event.target).remove();
+    $(event.target).remove(); //Remove list element as the same location appends again
   };
-}
+};
 
 //When click on 'clear search'-button list elemnts get removed and page reloads
 function clearStorage (event){
@@ -259,7 +262,7 @@ function clearStorage (event){
 
   localStorage.clear();
   window.location.reload();
-}
+};
 
 //On click of buttons events happen;
 btnClear.on("click", clearStorage);

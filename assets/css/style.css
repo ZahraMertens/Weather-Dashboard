@@ -14,6 +14,19 @@ header {
     opacity: 0.8;
 }
 
+#form-header {
+    font-size: 19px;
+}
+
+main {
+    padding-top: 20px;
+}
+
+.search-card {
+    float: left;
+    text-align: center;
+}
+
 .app-title {
     font-size: 45px;
     font-family: 'Cairo', sans-serif;
@@ -25,13 +38,10 @@ header {
     opacity: 1;
 }
 
-.search-card {
-    float: left;
-}
-
-
-main {
-    padding-top: 20px;
+#city {
+  background-color: rgb(244, 253, 255);
+  border: 1px black solid;
+  border-radius: 2px;
 }
 
 .from-label {
@@ -44,10 +54,6 @@ main {
 
 .btn-storage {
     border-radius: 15px;
-}
-
-#form-header {
-    font-size: 20px;
 }
 
 .result-card-main {
@@ -64,14 +70,26 @@ main {
     list-style-type: none;
     text-align: center;
     margin-top: 5px;
+    transition: 0.3s;
 }
 
 .li-el-results:hover {
     cursor: pointer;
+    font-weight: bold;
+    background-color: rgb(216, 255, 108);
+    border: rgb(0, 0, 0) 2px solid;
 }
 
 .previous-results {
     padding-left: 0px;
+}
+
+.card-result {
+    opacity: 0.92;
+}
+
+.p-main-container {
+    font-size: 17px;
 }
 
 .main-result {
@@ -81,6 +99,14 @@ main {
     margin-right: 0;
     margin-left: 0;
     padding: 10px;
+}
+
+.p-span {
+    font-weight: bolder;
+}
+
+.uv-span {
+   font-weight: normal;
 }
 
 .card-result p {
@@ -94,18 +120,33 @@ main {
 }
 
 .green {
-    background-color: rgb(124, 189, 124);
+    background-color: rgb(79, 214, 79);
     border-radius: 15px;
+    padding: 8px;
+}
+
+.yellow {
+    background-color: yellow;
+    border-radius: 15px;
+    padding: 8px;
 }
 
 .orange {
-    background-color: rgb(211, 174, 104);
+    background-color: rgb(252, 174, 30);
     border-radius: 15px;
+    padding: 8px;
 }
 
 .red {
-    background-color: rgb(236, 129, 129);
+    background-color: rgb(233, 73, 73);
     border-radius: 15px;
+    padding: 8px;
+}
+
+.purple {
+    background-color: rgb(214, 81, 214);
+    border-radius: 15px;
+    padding: 8px;
 }
 
 .header-forecast {
@@ -120,6 +161,9 @@ main {
     border: 1px solid black;
     padding: 5px;
     margin: auto;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 3px 3px 3px 3px rgb(141, 141, 141);
 }
 
 #forecast-header {
@@ -130,3 +174,51 @@ main {
 .p-forecast {
     font-size: 12px;
 }
+
+@media screen and (max-width:992px){
+    .btn-storage {
+        margin-bottom: 15px;
+    }
+
+    .search-card {
+        margin: auto;
+        text-align: center;
+    }
+
+    .mini-card-container {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:768px){
+    #forecast-header {
+       font-size: 20px;
+    }
+
+    .card-mini {
+        box-shadow: none;
+    }
+
+    .p-forecast {
+        font-size: 15px;
+    }
+
+    .card-mini {
+        margin-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 576px){
+    #forecast-header {
+       font-size: 25px;
+    }
+
+    .p-forecast {
+        font-size: 20px;
+    }
+
+    .card-mini {
+        margin-bottom: 15px;
+    }
+}
+
