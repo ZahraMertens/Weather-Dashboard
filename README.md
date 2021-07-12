@@ -2,10 +2,10 @@
 
 ## General Information
 
-The deployed Webpage is a code related quiz created with HTML, CSS and JavaScript
+The deployed Webpage is a Weather Dashboard which allows the user to search for a city to access the current weather conditions as well as to see a 5 day forecast. The webpages data is from the openweathermap api and the html file features dynamically updated HTML and CSS.
 
-* Deployed URL of the Weather Dashboard: 
-* URL of the GitHub Repo: 
+* Deployed URL of the Weather Dashboard: https://zahramertens.github.io/Weather-Dashboard/
+* URL of the GitHub Repo: https://github.com/ZahraMertens/Weather-Dashboard.git
 
 
 ## Table if Contents
@@ -18,36 +18,26 @@ The deployed Webpage is a code related quiz created with HTML, CSS and JavaScrip
 
 ## Task Describtion
 
-This is a code related quiz application using HTML, CSS, and Javascript. This application demonstrates the use of Javascript to provide quiz questions & answers and collect user data to determine whether the answers to a question is correct. After it generates a score and appends a highscore page of results from the user data.
+The Weather Dashboard allows the user to look up the current weather conditions of a location/city by searching its name as well as a 5 day forecast for the same location. The data is retrieved from the OpenWeather API and displayed on the webpage. So as a user I want to see the weather outlook for multiple cities.
 
-This project has been deployed to GitHub Pages. Please follow the deployed link which is displayed in (#general-informaion) to start the quiz.
-
-The task/ homework should prepare us for the journey to become a full-stack developer as we will likely be asked to complete a coding assessment perhaps as part of an interview process.
-The webpage is a timed coding quiz, which confornts the user with multiple-choice questions.
 
 
 ## Actual Behaviour
 
-* WHEN I click the start button THEN a timer starts and I am presented with a question
+* WHEN I search for a city THEN I am presented with current and future conditions for that city and that city is added to the search history
 
-* WHEN I answer a question THEN I am presented with another question
+* WHEN I view current weather conditions for that city THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
 
-* WHEN I answer a question incorrectly THEN time is subtracted from the clock
+* WHEN I view the UV index THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
 
-* WHEN all questions are answered or the timer reaches 0 THEN the game is over
+* WHEN I view future weather conditions for that city THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
 
-* WHEN the game is over THEN I can save my initials and my score
+* WHEN I click on a city in the search history THEN I am again presented with current and future conditions for that city
 
 ## 🏆 Bonus
 
 
-* WHEN I answer a question THEN the correct or wrong question will be displayed on the webpage
-
-* The start webpage allows the user to go straight to the highscore page
-
-* WHEN I save my initials and score I will see a highscore screen
-
-* WHEN I click the -clear all scores- button, the local Storage gets cleared.
+* WHEN I click on the clear search history button the search history gets cleared and the page reloads 
 
 ## Mock-Up
 
@@ -57,9 +47,10 @@ The following GIF shows the web applications apperance and functionality:
 
 ## Credits
 
-* https://www.codemahal.com/video/javascript-quiz-tutorial/
-* https://michael-karen.medium.com/how-to-save-high-scores-in-local-storage-7860baca9d68
-* https://ezgif.com/crop/ezgif-2-a0417ce0f339.gif
-* https://stackoverflow.com/questions/32202482/stop-a-countdown-timer-after-a-certain-time
-* https://www.w3schools.com/jsref/prop_html_innerhtml.asp
-* https://love2dev.com/blog/absolute-centering-css/
+* https://openweathermap.org/
+* https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+* https://www.javascripttutorial.net/javascript-fetch-api/
+* https://www.digitalocean.com/community/tutorials/
+* how-to-use-the-javascript-fetch-api-to-get-data
+* https://javascript.info/fetch
+* https://youtu.be/SXsaB9TUfkk
