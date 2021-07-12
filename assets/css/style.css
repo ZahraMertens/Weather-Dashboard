@@ -14,8 +14,14 @@ header {
     opacity: 0.8;
 }
 
-#form-header {
-    font-size: 19px;
+.app-title {
+    font-size: 45px;
+    font-family: 'Cairo', sans-serif;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 main {
@@ -27,15 +33,8 @@ main {
     text-align: center;
 }
 
-.app-title {
-    font-size: 45px;
-    font-family: 'Cairo', sans-serif;
-    text-align: center;
-    color: rgb(255, 255, 255);
-    margin: auto;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    opacity: 1;
+#form-header {
+    font-size: 19px;
 }
 
 #city {
@@ -50,14 +49,6 @@ main {
 
 .btn {
   margin-top: 10px;
-}
-
-.btn-storage {
-    border-radius: 15px;
-}
-
-.result-card-main {
-    float: right;
 }
 
 .li-el-results {
@@ -80,12 +71,27 @@ main {
     border: rgb(0, 0, 0) 2px solid;
 }
 
+.btn-storage {
+    border-radius: 15px;
+}
+
+.result-card-main {
+    float: right;
+}
+
+
 .previous-results {
     padding-left: 0px;
 }
 
 .card-result {
     opacity: 0.92;
+}
+
+.header-result {
+    font-size: 30px;
+    font-family: monospace;
+    font-weight: 300;
 }
 
 .p-main-container {
@@ -111,12 +117,6 @@ main {
 
 .card-result p {
     padding-left: 5px;
-}
-
-.header-result {
-    font-size: 30px;
-    font-family: monospace;
-    font-weight: 300;
 }
 
 .green {

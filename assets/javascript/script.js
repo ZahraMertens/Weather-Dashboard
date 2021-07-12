@@ -100,7 +100,7 @@ function displayWeather(weather, location){
   if (weather.length === 0) {
     alert("No Data found")
   };
-/////////////////////////////////////////////
+
   //Display seach as list elements and set local storage
   console.log(location);
         
@@ -264,6 +264,7 @@ function clearStorage (event){
   window.location.reload();
 };
 
+///////////////////////////////////
 //On click of buttons events happen;
 btnClear.on("click", clearStorage);
 ulEl.on("click", $(".li-el-results"), handleList);
