@@ -1,4 +1,4 @@
-### Code-Quiz
+### Weather-Dashboard
 
 ## General Information
 
