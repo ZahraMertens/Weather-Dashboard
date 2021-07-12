@@ -7,6 +7,11 @@ body {
     background-size: cover;
 }
 
+main {
+    padding-top: 20px;
+}
+
+/*Header*/
 header {
     display: flex;
     text-align: center;
@@ -24,10 +29,7 @@ header {
     padding-bottom: 15px;
 }
 
-main {
-    padding-top: 20px;
-}
-
+/*Form Element for search*/
 .search-card {
     float: left;
     text-align: center;
@@ -51,6 +53,7 @@ main {
   margin-top: 10px;
 }
 
+/*List elements which get appended when a city is searched*/
 .li-el-results {
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
@@ -71,14 +74,15 @@ main {
     border: rgb(0, 0, 0) 2px solid;
 }
 
+/*Button to clear local storage*/
 .btn-storage {
     border-radius: 15px;
 }
 
+/*Big container for main result*/
 .result-card-main {
     float: right;
 }
-
 
 .previous-results {
     padding-left: 0px;
@@ -149,6 +153,7 @@ main {
     padding: 8px;
 }
 
+/*Forecast container and cards*/
 .header-forecast {
     font-size: 30px;
 }
@@ -175,6 +180,7 @@ main {
     font-size: 12px;
 }
 
+/*Responsive Layout*/
 @media screen and (max-width:992px){
     .btn-storage {
         margin-bottom: 15px;
