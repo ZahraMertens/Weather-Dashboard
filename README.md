@@ -4,8 +4,8 @@
 
 The deployed Webpage is a Weather Dashboard which allows the user to search for a city to access the current weather conditions as well as to see a 5 day forecast. The webpages data is from the openweathermap api and the html file features dynamically updated HTML, CSS and Bootstrap Grid Layout.
 
-* [Deployed URL of the Weather Dashboard:](https://zahramertens.github.io/Weather-Dashboard/)
-* [URL of the GitHub Repo:](https://github.com/ZahraMertens/Weather-Dashboard.git)
+* [Deployed URL of the Weather Dashboard](https://zahramertens.github.io/Weather-Dashboard/)
+* [URL of the GitHub Repo](https://github.com/ZahraMertens/Weather-Dashboard.git)
 
 
 ## Table if Contents
