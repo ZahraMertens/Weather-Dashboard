@@ -11,16 +11,25 @@ The deployed Webpage is a Weather Dashboard which allows the user to search for 
 ## Table if Contents
 1. [General Information](#general-informaion)
 2. [Task Description](#task-description)
-3. [Mock-Up](#mock-up)
-4. [Bonus](#bonus)
-5. [Credits](#credits)
+3. [Technologies Used](#technologies-used)
+4. [Mock-Up](#mock-up)
+5. [Bonus](#bonus)
+6. [Credits](#credits)
 
 
 ## Task Describtion
 
-The Weather Dashboard allows the user to look up the current weather conditions of a location/city by searching its name as well as a 5 day forecast for the same location. The data is retrieved from the OpenWeather API and displayed on the webpage. So as a user I want to see the weather outlook for multiple cities.
+* The Weather Dashboard allows the user to look up the current weather conditions of a location/city by searching its name as well as a 5 day forecast for the same location. The data is retrieved from the OpenWeather API and displayed on the webpage. So as a user I want to see the weather outlook for multiple cities.
 
+## Technologies Used
 
+* HTML
+
+* CSS
+
+* CSS Framework: Bootstrap v5.0.2
+
+* JavaScript
 
 ## Actual Behaviour
 
